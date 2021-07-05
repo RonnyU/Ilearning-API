@@ -313,6 +313,7 @@ const controller = {
     },
     getCoursesByUserPaginated(req, res) {
         const userId = req.params.userId;
+
         let page;
 
         if (
@@ -339,7 +340,7 @@ const controller = {
             page,
         };
 
-        Course.paginate({ $and: [{ user: userId }] }, options, (err, courses) => {
+        Course.paginate({ $and: [{ user: userId, deleted: false }] }, options, (err, courses) => {
             if (err) {
                 return res.status(500).send({
                     status: 'error',
@@ -352,7 +353,7 @@ const controller = {
                     message: 'no hay courses',
                 });
             }
-
+            //console.log(courses);
             return res.status(200).send({
                 status: true,
                 courses: courses.docs,
@@ -363,7 +364,7 @@ const controller = {
     },
     getCoursesByCurrentUser(req, res) {
         const userId = req.user.id;
-        console.log(userId);
+        //console.log(userId);
         Course.find({
             user: userId,
             deleted: false,
@@ -382,7 +383,7 @@ const controller = {
                         message: 'there are no courses to retreive',
                     });
                 }
-
+                console.log(courses);
                 return res.status(200).send({
                     status: true,
                     courses,
