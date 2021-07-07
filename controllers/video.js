@@ -133,7 +133,7 @@ const controller = {
         }
     },
     getVideo(req, res) {
-        console.log('GETVIDEO');
+        //console.log('GETVIDEO');
         const fileName = req.params.filename;
         const pathFile = path.join(__dirname, '../storage/courses/videos/' + fileName);
         //* remember to change this method bc is deprecated
