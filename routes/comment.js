@@ -35,7 +35,7 @@ router.get(
 );
 
 router.post('/comment/download', function (req, res, next) {
-    console.log(req);
+    //console.log(req);
     const filepath = path.join(__dirname, '../storage/supportMaterial') + '/' + req.body.filename;
     res.sendFile(filepath);
 });

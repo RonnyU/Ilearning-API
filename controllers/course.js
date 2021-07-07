@@ -14,7 +14,7 @@ const controller = {
     save: (req, res) => {
         //getting the resquest parameters
         const params = req.body;
-        console.log(req.body);
+        //console.log(req.body);
         const subcategories = req.body.subcategories;
 
         let validateTitle;
@@ -134,7 +134,7 @@ const controller = {
     updateCourse(req, res) {
         const courseId = req.params.courseId;
         const params = req.body;
-        console.log(req.body);
+        //console.log(req.body);
         let validateTitle;
         let validateCourseDesc;
 
@@ -383,7 +383,7 @@ const controller = {
                         message: 'there are no courses to retreive',
                     });
                 }
-                console.log(courses);
+                //console.log(courses);
                 return res.status(200).send({
                     status: true,
                     courses,
@@ -539,7 +539,7 @@ const controller = {
 
                 //If everything above goes well, files are now on server.
             } else {
-                console.log(req.file);
+                //console.log(req.file);
                 await Course.findByIdAndUpdate(
                     { _id: courseId },
                     { videoPath: req.file.filename },

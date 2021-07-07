@@ -14,7 +14,7 @@ const controller = {
     },
     addVideo(req, res) {
         //configuring path and filename
-        console.log('ADDVIUDEO');
+
         const storage = multer.diskStorage({
             destination: (req, file, cb) => {
                 cb(null, path.join(__dirname, '../storage/courses/videos'));
@@ -60,7 +60,7 @@ const controller = {
 
                 //If everything above goes well, files are now on server.
             } else {
-                console.log(req.file);
+                //console.log(req.file);
                 res.status(200).send({
                     status: true,
                     message: 'Video succesfully uploaded to server.',
@@ -86,7 +86,7 @@ const controller = {
         } else {
             let videoDuration = 0;
             getVideoDurationInSeconds(videoPath).then((duration) => {
-                console.log('Este es el video duration: ', duration);
+                //console.log('Este es el video duration: ', duration);
                 videoDuration += duration;
 
                 const video = new Video();
@@ -111,7 +111,7 @@ const controller = {
     },
     addVideoMap(req, res) {
         const { chapterId, lessonId, courseId, videoId } = req.body;
-        console.log(chapterId, ' ', lessonId, ' ', courseId, ' ', videoId);
+        //console.log(chapterId, ' ', lessonId, ' ', courseId, ' ', videoId);
         if (chapterId == undefined || lessonId == undefined || !courseId || !videoId) {
             return res.send({ status: false, message: 'Missing data' });
         } else {
@@ -175,7 +175,7 @@ const controller = {
                 //Implementing "upload()" with error Handling
                 upload(req, res, function (err) {
                     //catching multer errors
-                    console.log(req.files);
+                    //console.log(req.files);
                     if (err instanceof multer.MulterError) {
                         res.status(500).send({
                             status: false,
@@ -391,9 +391,9 @@ const controller = {
 
         Video.findById({ _id: videoId }, (err, success) => {
             if (err) {
-                console.log('NOOO');
+                //console.log('NOOO');
             } else {
-                console.log('Exito');
+                //console.log('Exito');
             }
         });
     },

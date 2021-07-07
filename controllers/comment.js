@@ -303,7 +303,7 @@ const controller = {
             const { videoId } = req.params;
             const { commentId } = req.params;
             const { content } = req.body;
-            console.log(req.body);
+            //console.log(req.body);
             if (validator.isEmpty(content)) {
                 return res.status(200).send({
                     message: 'the comment is empty',

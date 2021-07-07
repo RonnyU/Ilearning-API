@@ -12,7 +12,7 @@ const controller = {
             const { chapterDesc } = req.body;
             let position;
 
-            console.log(req.body);
+            //console.log(req.body);
 
             if (validator.isEmpty(chapterName)) {
                 return res.status(200).send({
@@ -105,11 +105,11 @@ const controller = {
         const params = req.body;
         let { position } = req.body;
         position = position - 1;
-        console.log(position);
+        //console.log(position);
         let lessonPosition;
 
-        console.log(req.params);
-        console.log(req.body);
+        //console.log(req.params);
+        //console.log(req.body);
 
         let validateLessonName;
         let existsChapter = false;
@@ -366,14 +366,14 @@ const controller = {
         try {
             const { courseId } = req.params;
             const { position, lessonsArray, chapterId } = req.body;
-            console.log(position);
+            //console.log(position);
 
             if (courseId == undefined || position == undefined) {
                 return res.send({ status: false, message: 'Params or body expected' });
             } else {
                 for (let i = 0; i < lessonsArray.length; i++) {
                     lessonId = lessonsArray[i];
-                    console.log(lessonId);
+                    //console.log(lessonId);
                     await Course.findOne({ _id: courseId }).then(
                         (doc) => {
                             auxLesson = doc.chapter.id(chapterId).lesson.id(lessonId);
@@ -406,7 +406,7 @@ const controller = {
             } else {
                 for (let i = 0; i < chapterIds.length; i++) {
                     chapterId = chapterIds[i];
-                    console.log(chapterId);
+                    //console.log(chapterId);
                     await Course.findOne({ _id: courseId }).then(
                         (doc) => {
                             auxCourse = doc.chapter.id(chapterId);
