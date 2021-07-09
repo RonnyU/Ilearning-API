@@ -2,7 +2,7 @@
 
 # compiled output
 .env
-
+/storage
 
 # dependencies
 /node_modules
@@ -12,3 +12,6 @@
 .vscode
 .eslintrc.json
 .prettierrc
+
+# Local Netlify folder
+.netlify
