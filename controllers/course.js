@@ -339,7 +339,7 @@ const controller = {
             page,
         };
 
-        Course.paginate({ $and: [{ user: userId }] }, options, (err, courses) => {
+        Course.paginate({ $and: [{ user: userId, deleted: false }] }, options, (err, courses) => {
             if (err) {
                 return res.status(500).send({
                     status: 'error',
