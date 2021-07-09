@@ -2,7 +2,7 @@
 
 # compiled output
 .env
-/storage
+
 
 # dependencies
 /node_modules

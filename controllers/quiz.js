@@ -54,8 +54,8 @@ const controller = {
             const { quizId } = req.params;
             const { question } = req.body;
 
-            //console.log(req.params);
-            //console.log(req.body);
+            console.log(req.params);
+            console.log(req.body);
 
             if (validator.isEmpty(question)) {
                 return res.status(200).send({

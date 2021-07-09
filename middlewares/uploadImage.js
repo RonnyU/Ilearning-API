@@ -4,7 +4,7 @@ const path = require('path');
 //configuraciones extras de multer
 const storage = multer.diskStorage({
     destination(req, file, cb) {
-        //console.log(req.originalUrl);
+        console.log(req.originalUrl);
         if (req.originalUrl == '/api/user/upload-avatar') {
             cb(null, path.join(__dirname, '../storage/users/avatar'));
         } else {
@@ -14,7 +14,7 @@ const storage = multer.diskStorage({
 
     filename(req, file = {}, cb) {
         cb(null, uuidv4() + path.extname(file.originalname).toLocaleLowerCase());
-        //console.log(file);
+        console.log(file);
 
         /*     const fileExtension = (originalname.match(/\.+[\S]+$/) || [])[0];
 

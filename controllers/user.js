@@ -586,7 +586,7 @@ const controller = {
     // get the number of courses that the user have bought
     getTotalOfCoursesBought(req, res) {
         const courseId = req.params.courseId;
-        //console.log(courseId);
+        console.log(courseId);
         User.where({ mycourses: courseId }).countDocuments(function (err, count) {
             if (err) {
                 return res.status(200).send({
