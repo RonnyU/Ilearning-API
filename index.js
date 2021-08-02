@@ -9,7 +9,7 @@ const port = process.env.PORT || 3999;
 
 // Setting conection string to mongo db
 //const MONGODB_URI = `mongodb+srv://${process.env.MONGODB_USER}:${process.env.MONGODB_PASS}@cluster0.0uxtl.mongodb.net/${process.env.MONGODB_NAME}?retryWrites=true&w=majority`;
-const MONGODB_URI = `mongodb+srv://${process.env.MONGODB_USER}:${process.env.MONGODB_PASS}@${process.env.MONGODB_CLUSTER}/${process.env.MONGODB_NAME}?retryWrites=true&w=majority`;
+const MONGODB_URI = `mongodb+srv://${process.env.MONGODB_USER}:${process.env.MONGODB_PASS}@codigomagdiel.ykkas.mongodb.net/${process.env.MONGODB_NAME}?retryWrites=true&w=majority`;
 
 //Stablishing connection to database
 mongoose
